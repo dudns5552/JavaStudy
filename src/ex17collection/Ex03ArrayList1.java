@@ -75,7 +75,7 @@ public class Ex03ArrayList1 {
 		Iterator 사용법
 			1. 컬렉션에 저장된 내용을 Iterator에게 알려주기 위해
 				인스턴스를 생성한다.
-			2. hasNext()로 인출한 인스턴스가 있는지 검사한다. 만약
+			2. hasNext()로 인출할 인스턴스가 있는지 검사한다. 만약
 				없다면 false를 반환한다.
 			3. 있다면 next()를 통해 인스턴스를 인출한다.
 		*/
