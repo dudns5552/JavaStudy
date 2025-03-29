@@ -2,7 +2,6 @@ package quiz;
 
 import java.util.Random;
 import java.util.Scanner;
-import java.util.logging.LogManager;
 
 /*
 컴퓨터는 1~100사이의 숫자 하나를 생성한다.
