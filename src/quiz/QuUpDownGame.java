@@ -1,5 +1,8 @@
 package quiz;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /*
 컴퓨터는 1~100사이의 숫자 하나를 생성한다.
 총 시도횟수는 7번을 부여한다.
@@ -13,7 +16,50 @@ package quiz;
 
 public class QuUpDownGame {
 
-	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Random rd = new Random();
+		int com = 0;
+		int user = 0;
+		com = rd.nextInt(100)+1;
+		System.out.println(com);
+		
+		for(int i = 1 ; i <= 7 ; i++) {
+			
+			System.out.println("숫자를 입력하세요 : ");
+			user = sc.nextInt();
+			if(user == com) {
+				System.out.println("정답입니다.");
+				user = com;
+				break;
+			}
+			else if(user < 0 || 100 < user ) {
+				System.out.println("잘못입력하셨습니다.");
+				main(args);
+			}
+			else if(user < com) {
+				System.out.println("UP");
+			}
+			else if(user > com) {
+				System.out.println("DOWN");
+			}
+			else {
+				System.out.println("잘못 입력하셨습니다.");
+			}
+		}
+		if(user != com) {
+			System.out.println("실패입니다.");
+		}
+		System.out.println("게임을 계속하시겠습니까? 1. 계속 0. 종료");
+		int conEnd = sc.nextInt();
+		if(conEnd == 1) {
+			main(args);
+		}
+		else if(conEnd == 0) {
+			System.exit(0);
+		}
+	}
 	/*
 	실행결과]
 	생성된난수:36
