@@ -48,20 +48,46 @@ public class QuArrayList {
 		String taget = scan.nextLine();
 			
 		//2.확장for문으로 컬렉션 전체를 접근
+		int idx = -1;
+		try {
 		for(Student st : list) {
-		int 
+			
+			//3.검색결과 유/무에 따라
+			if(taget.equals(st.getName())) {
+			idx = list.indexOf(st);
+			}
+			//검색결과 있을때…검색된 데이터 삭제
+			if(0 <= idx) {
+				System.out.println("검색되었습니다");
+				
+				System.out.println("삭제하시겠습니까? (1)삭제 (0)취소");
+				int del = scan.nextInt();
+				if(del == 1) {
+					Student st5 = list.get(idx);
+					list.remove(idx);
+					System.out.println("정보가 삭제되었습니다.\n"+ st5);
+				}
+				else if(del == 0) {
+					System.out.println("취소되었습니다.");
+					main(args);
+				}
+			}
 		}
-		
-		//3.검색결과 유/무에 따라 
-		//검색결과 있을때…검색된 데이터 삭제
+		}
+		catch(Exception e) {
+			e.getMessage();
+		}
 		//검색결과 없을때...검색결과가 없다고 출력
-		System.out.println(list.contains(taget) 
-				? "검색되었습니다." : "찾으시는 데이터가 없습니다.");
+		if(idx == -1) {
+			System.out.println("찾으시는 데이터가 없습니다.");
+		}
 		
 		//4.전체정보 출력
-		for(Student e : list) {
-			System.out.println(e);
+		System.out.println("[전체정보 출력]");
+		for(Student stu : list) {
+			System.out.println(stu);
 		}
+		
 	}
 	/*
 	실행결과]
@@ -74,3 +100,4 @@ public class QuArrayList {
 	이름:마길동, 나이:40, 학번:2015
 	 */
 }
+

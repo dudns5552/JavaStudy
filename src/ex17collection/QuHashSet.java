@@ -1,5 +1,10 @@
 package ex17collection;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Objects;
+import java.util.Scanner;
+
 /*
 문제2] QuHashSet.java 
 컬렉션 set에 저장된 객체를 이름으로 검색하자. 해당 정보가 있으면 해당 
@@ -29,12 +34,39 @@ class Avengers {
 		return "Avengers [본명=" + name + ", 닉네임=" + heroName + ", "
 				+ "능력=" + weapon +"]";
 	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public int hashCode() {
+		int returnCode = Objects.hash(name, heroName);
+		
+		return returnCode;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		System.out.println("equals 호출됨");
+		Avengers avg = (Avengers)obj;
+		
+		if(avg.name == this.name || avg.heroName == this.heroName)
+			return true;
+		else
+			return false;
+	}
 }
 
 public class QuHashSet {
 
 	public static void main(String[] args) {
 
+		Scanner scanner = new Scanner(System.in);
+		
 		HashSet<Avengers> set = new HashSet<Avengers>();
 
 		Avengers hero1 = new Avengers("토니스타크", "아이언맨", "Mark-48 수트");
@@ -51,6 +83,17 @@ public class QuHashSet {
 		for(Avengers av : set)
 		{
 			System.out.println(av.toString());			
+		}
+		
+		System.out.println("검색할 이름을 입력하세요.");
+		String taget = scanner.nextLine();
+		Iterator itr = set.iterator();
+		while(itr.hasNext() ) {
+			Avengers seach = (Avengers) itr.next(); 
+			if(taget.equals(seach.name) || taget.equals(seach.heroName)) {
+				System.out.println("== 요청하신 정보를 찾았습니다. ==");
+				System.out.println(seach);
+			}
 		}
 	}
 	/*

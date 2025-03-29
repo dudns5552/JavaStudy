@@ -19,4 +19,5 @@ public class Student extends Person {
 		 */
 		return super.toString() + ", 학번 : "+ stNumber;
 	}
+	
 }
