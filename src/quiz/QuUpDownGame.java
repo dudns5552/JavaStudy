@@ -17,13 +17,18 @@ import java.util.Scanner;
 public class QuUpDownGame {
 
 	public static void main(String[] args) {
+		updowngame();
+	}
+	
+	public static void updowngame() {
 		
+
 		Scanner sc = new Scanner(System.in);
 		Random rd = new Random();
 		int com = 0;
 		int user = 0;
 		com = rd.nextInt(100)+1;
-		System.out.println(com);
+//		System.out.println(com);
 		
 		for(int i = 1 ; i <= 7 ; i++) {
 			
@@ -36,7 +41,7 @@ public class QuUpDownGame {
 			}
 			else if(user < 0 || 100 < user ) {
 				System.out.println("잘못입력하셨습니다.");
-				main(args);
+				updowngame();
 			}
 			else if(user < com) {
 				System.out.println("UP");
@@ -54,12 +59,15 @@ public class QuUpDownGame {
 		System.out.println("게임을 계속하시겠습니까? 1. 계속 0. 종료");
 		int conEnd = sc.nextInt();
 		if(conEnd == 1) {
-			main(args);
+			updowngame();;
 		}
 		else if(conEnd == 0) {
 			System.exit(0);
 		}
+		
 	}
+	
+	
 	/*
 	실행결과]
 	생성된난수:36
