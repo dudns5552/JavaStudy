@@ -2,6 +2,7 @@ package quiz;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.LogManager;
 
 /*
 컴퓨터는 1~100사이의 숫자 하나를 생성한다.
@@ -15,15 +16,14 @@ import java.util.Scanner;
  */
 
 public class QuUpDownGame {
+	static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		updowngame();
 	}
 	
 	public static void updowngame() {
-		
 
-		Scanner sc = new Scanner(System.in);
 		Random rd = new Random();
 		int com = 0;
 		int user = 0;
@@ -33,11 +33,19 @@ public class QuUpDownGame {
 		for(int i = 1 ; i <= 7 ; i++) {
 			
 			System.out.println("숫자를 입력하세요 : ");
+			try {
 			user = sc.nextInt();
+			}
+			catch (Exception e) {
+				e.getMessage();
+				System.out.println("잘못된 입력입니다.");
+				sc.nextLine();
+				updowngame();
+			}
+			
 			if(user == com) {
-				System.out.println("정답입니다.");
-				user = com;
-				break;
+				System.out.println(user + " 정답입니다.");
+				gameOver();
 			}
 			else if(user < 0 || 100 < user ) {
 				System.out.println("잘못입력하셨습니다.");
@@ -49,23 +57,39 @@ public class QuUpDownGame {
 			else if(user > com) {
 				System.out.println("DOWN");
 			}
-			else {
-				System.out.println("잘못 입력하셨습니다.");
-			}
 		}
 		if(user != com) {
-			System.out.println("실패입니다.");
+			System.out.println("실패했습니다.");
 		}
-		System.out.println("게임을 계속하시겠습니까? 1. 계속 0. 종료");
-		int conEnd = sc.nextInt();
-		if(conEnd == 1) {
-			updowngame();;
+		gameOver();
+	}
+	
+	public static void gameOver() {
+		
+		System.out.println("게임이 끝났습니다 다시하시겠습니까? 1. 다시하기 0. 종료");
+		int go = -1;
+		try {
+			go = sc.nextInt();
 		}
-		else if(conEnd == 0) {
-			System.exit(0);
+		catch (Exception e) {
+			e.getMessage();
+			System.out.println("잘못된 입력입니다.");
+			sc.nextLine();
+			gameOver();
 		}
 		
+		
+		if(go == 0) {
+			System.exit(0);
+		}
+		else if(go == 1)
+			updowngame();
+		else {
+			System.out.println("잘못된 입력입니다. 다시 입력해주세요");
+			gameOver();
+		}
 	}
+
 	
 	
 	/*
