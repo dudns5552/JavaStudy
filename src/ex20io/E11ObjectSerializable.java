@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
@@ -39,8 +40,8 @@ public class E11ObjectSerializable {
 			
 			//// 여기까지 실행하면 obj 파일이 생성됨 ////
 			
-			ObjectOutputStream in =
-				new ObjectOutputStream(
+			ObjectInputStream in =
+				new ObjectInputStream(
 						new FileInputStream(
 								"src/ex20io/circle.obj"));
 			

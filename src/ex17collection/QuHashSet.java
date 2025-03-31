@@ -51,7 +51,7 @@ class Avengers {
 	
 	@Override
 	public boolean equals(Object obj) {
-		System.out.println("equals 호출됨");
+//		System.out.println("equals 호출됨");
 		Avengers avg = (Avengers)obj;
 		
 		if(avg.name == this.name || avg.heroName == this.heroName)
@@ -87,13 +87,20 @@ public class QuHashSet {
 		
 		System.out.println("검색할 이름을 입력하세요.");
 		String taget = scanner.nextLine();
+		//next로도 문자열 입력받기 가능 it.next하면 출력됨
 		Iterator itr = set.iterator();
+		boolean isFind = false;
 		while(itr.hasNext() ) {
 			Avengers seach = (Avengers) itr.next(); 
-			if(taget.equals(seach.name) || taget.equals(seach.heroName)) {
+			if(taget.equals(seach.name) ||
+					taget.equals(seach.heroName)) {
 				System.out.println("== 요청하신 정보를 찾았습니다. ==");
 				System.out.println(seach);
+				isFind = true;
 			}
+		}
+		if(isFind = false) {
+			System.out.println("해당 영웅은 없어요ㅜㅜ");
 		}
 	}
 	/*
