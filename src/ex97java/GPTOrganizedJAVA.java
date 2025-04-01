@@ -15,6 +15,7 @@ abstract class Book implements BookInfo {
     protected double price; //가격
     private static int totalBooks = 0; // 정적 변수
 
+    //생성자 제목, 작가, 가격을 멤버로 갖고있다
     public Book(String title, String author, double price) {
         this.title = title;
         this.author = author;
@@ -29,7 +30,7 @@ abstract class Book implements BookInfo {
     public abstract void displayInfo(); // 추상 메서드
 }
 
-// 일반 도서 클래스
+// 일반 도서 클래스(상속)
 class PhysicalBook extends Book {
     public PhysicalBook(String title, String author, double price) {
         super(title, author, price);
@@ -41,7 +42,7 @@ class PhysicalBook extends Book {
     }
 }
 
-// 전자책 클래스
+// 전자책 클래스(상속)
 class EBook extends Book {
     private double fileSize;
 
@@ -61,7 +62,7 @@ class Library {
     private List<Book> books = new ArrayList<>(); // 제네릭과 컬렉션 활용
 
     public void addBook(Book book) {
-        books.add(book);
+        books.add(book); //책을 저장하는 배열
     }
 
     public void showBooks() {
@@ -94,7 +95,8 @@ class AutoSave extends Thread {
                 Thread.sleep(5000);
                 library.saveToFile("books.txt");
                 System.out.println("자동 저장 완료!");
-            } catch (Exception e) {
+            } 
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }
