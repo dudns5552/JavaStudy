@@ -37,7 +37,8 @@ public class E02SystemOutPrintln {
 		System.out.println(3 + 5);//8
 		System.out.println(3.5 + 5.1);//8.6
 		
-		//숫자(정수 혹은 실수)와 문자열 혹은 문자열과 문자열인 경우에는 단순 연결되어 출력
+		/* 숫자(정수 혹은 실수)와 문자열 혹은 문자열과 문자열인 경우
+		에는 단순 연결되어 출력 */
 		System.out.println("3+5=" + 8);
 		System.out.println(3.15 + "는 실수입니다.");
 		System.out.println("3+5" + "의 연산결과는 8입니다.");

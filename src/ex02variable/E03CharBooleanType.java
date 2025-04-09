@@ -5,16 +5,18 @@ public class E03CharBooleanType {
 	public static void main(String[] args) {
 		
 		/*
-		char혀 : 하나의 문자를 저장할 수 있는 자료형으로 값을 저장할때
+		char형 : 하나의 문자를 저장할 수 있는 자료형으로 값을 저장할때
 		'(Single quotation)으로 감싸서 표현한다.
 		만약 "(Double quotation)으로 감싸면 문자열로 인식 하므로
 		String으로 선언해야한다.
 		 */
 		char ch1 = '가';
+		
 		//에러발생 문자열이므로 char로 선언할 수 없다.
 		//char chStr = '가나다라';
 		//String 타입으로 선언해야한다.
 		String chStr = "가나다라";
+		
 		System.out.println("ch1 = " + ch1);
 		System.out.println("chStr = " + chStr);
 		
