@@ -20,7 +20,7 @@ public class DBConnect {
 		반환한다.
 		
 	4. 우리는 반환된 Connection인스턴스를 통해 데이터베이스작업을
-		처리할 수 있다.서
+		처리할 수 있다.
 	*/
 	public static void main(String[] args) {
 		
