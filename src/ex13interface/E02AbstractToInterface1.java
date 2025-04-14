@@ -2,8 +2,8 @@ package ex13interface;
 
 /*
 프로젝트 전체에서 기준의 역할을 하는 추상클래스. 해당 클래스는
-추상클메서드를 포함하고 있으므로 하위에서 상속받게 되면 반드시 추상메서드르
-오버라이딩 해야한다. */
+추상메서드를 포함하고 있으므로 하위에서 상속받게 되면 반드시 
+추상메서드를 오버라이딩 해야한다. */
 abstract class PersonalNumberStorageAbs {
 	//정보를 저장하는 기능의 추상메서드
 	public abstract void addPersonalInfo(String juminNum,

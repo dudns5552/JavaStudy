@@ -1,3 +1,4 @@
+
 package ex21jdbc.callable;
 
 import java.sql.Types;
@@ -36,3 +37,5 @@ public class DeleteProcCall extends MyConnection {
 		new DeleteProcCall().dbExecute();
 	}
 }
+
+

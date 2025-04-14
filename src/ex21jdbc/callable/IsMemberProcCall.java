@@ -49,4 +49,5 @@ public class IsMemberProcCall extends MyConnection {
 		IsMemberProcCall mapc = new IsMemberProcCall();
 		mapc.dbExecute();
 	}
+	//이건 왜 안올라가는건데
 }

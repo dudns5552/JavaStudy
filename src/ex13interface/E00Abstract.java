@@ -7,8 +7,6 @@ public class E00Abstract {
 	추상메서드가 상속되면 자식클래스도 무조건 abstract로 선언을 해야된다.
 	그걸 막기 위해 오버라이딩을 해야한다.
 	
-	질문: 추상화 메소드 실행부가 없는데 자식클래스에서 오버라이딩해
-	
 	public class Week {
 	public static final int MON=1;
 	public static final int TUE=2;
