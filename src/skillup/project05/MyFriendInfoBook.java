@@ -57,7 +57,7 @@ public class MyFriendInfoBook {
 					System.out.print("프로그램종료");
 					return;
 				} //switch 끝
-			}
+			}//try 끝
 			catch (Exception e) {
 				System.out.println("[예외발생]메뉴선택은 숫자만 입력해주세요.");
 				/*
