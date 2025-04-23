@@ -92,7 +92,7 @@ public class E01WrapperClass2 {
 		String whiteString = "h e l l o";
 		//문자열을 char형 배열로 변환
 		char[] chArr = whiteString.toCharArray();
-		
+		whiteString.touppercase;
 		//카운트용 변수
 		int whiteCnt = 0;
 		
