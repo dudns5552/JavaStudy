@@ -8,8 +8,6 @@ public class SQLselect2 extends MyConnection {
 		super(user, pass);
 	}
 	
-	String query;
-	int result;
 	
 	@Override
 	public void dbExecute() {
